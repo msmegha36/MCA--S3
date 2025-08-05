@@ -1,6 +1,7 @@
-package com.example.facebook;
+package com.example.fcaebookpage;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -13,34 +14,35 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageView facebookView = findViewById(R.id.fbView);
-        ImageView likeImgView = findViewById(R.id.likeView);
-        ImageView commentImgView = findViewById(R.id.cmmntView);
-        ImageView shareImgView = findViewById(R.id.shareView);
+        ImageView facebookView=findViewById(R.id.fbView);
+        ImageView likeImgView=findViewById(R.id.likeView);
+        ImageView commentImgView=findViewById(R.id.cmmntView);
+        ImageView shareImgView=findViewById(R.id.shareView);
 
         likeImgView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showToast("You clicked the Like button");
+                showToast("You Clicked Like Button");
+            }
+        });
+
+        commentImgView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showToast("You Clicked Comment Button");
             }
         });
         shareImgView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showToast("You clicked the Share button");
-
+                showToast("You Clicked Share Button");
             }
         });
-        commentImgView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showToast("You clicked the Comment button");
 
-            }
-        });
+
     }
 
-        private void showToast(String message){
-            Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-        }
+    private void showToast(String message){
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
 }
